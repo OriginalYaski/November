@@ -30,7 +30,6 @@ gem "jbuilder"
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
   gem 'rails_12factor'
-  gem 'shoulda-matchers', '~> 5.0'
 end
 
 # Use Redis adapter to run Action Cable in production
