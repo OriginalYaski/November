@@ -3,7 +3,7 @@ RSpec.describe Project, type: :model do
   context "validations tests" do
     it "ensures the description is present" do
       project = Project.new(description: "Content of the description")
-      expect (validate_presence_of :description).to eq(true)
+      expect(validate :description).to eq(true)
     end
     
     it "should be able to save project" do
