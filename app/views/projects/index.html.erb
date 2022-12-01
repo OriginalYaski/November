@@ -1,14 +1,38 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .ProjectBox {
+    position: relative;
+    border: 1px solid blue;
+    border-radius: 5px;
+    float: left;
+    width: 300px;
+    height: 300px;
+}
+.ProjectButton {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+</style>
+  
+<body>
 
-<h1>Projects</h1>
+<%= link_to "New project", new_project_path %>
 
 <div id="projects">
   <% @projects.each do |project| %>
-    <%= render project %>
+    <div class="ProjectBox">
+    <h3><%= project.title %></h3>
     <p>
-      <%= link_to "Show this project", project %>
+        <%= project.description %>
     </p>
+    <form class="ProjectButton" action="<%= project_path(project) %>">
+        <input  type="submit" value="See this project" />
+    </form>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New project", new_project_path %>
+</body>
+</html>
