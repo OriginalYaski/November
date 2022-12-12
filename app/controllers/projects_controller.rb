@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
   end
+  
+  def portfolio
+    @projects = Project.all
+  end
 
   # GET /projects/1 or /projects/1.json
   def show
