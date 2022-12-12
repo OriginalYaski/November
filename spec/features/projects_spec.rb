@@ -6,6 +6,7 @@ RSpec.feature "Projects", type: :feature do
       visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
+        fill_in "Brief", with: "A short description"
       end
     end
   
