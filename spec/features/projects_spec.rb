@@ -4,9 +4,9 @@ RSpec.feature "Projects", type: :feature do
   context "Create new project" do
     before (:each) do
       visit new_project_path
-      within("form") do
+      within("projfields") do
         fill_in "Title", with: "Test title"
-        fill_in "Brief", with: "A short description"
+        # fill_in "Brief", with: "A short description"
       end
     end
   
