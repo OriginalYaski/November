@@ -1,20 +1,20 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
-=begin
+
   context "Create new project" do
     before (:each) do
       visit new_project_path
-      within("form") do
+      within all("form")[0] do
         fill_in "Title", with: "Test title"
         # fill_in "Brief", with: "A short description"
       end
     end
   
     scenario "should be successful" do
-      within("form") do
-        fill_in "Description", with: "Test description"
-      end
+      #within("form") do
+      fill_in "Description", with: "Test description"
+      #end
       click_button "Create Project"
       expect(page).to have_content("Project was successfully created")
     end
@@ -24,7 +24,7 @@ RSpec.feature "Projects", type: :feature do
       expect(page).to have_content("Description can't be blank")
     end
   end
-=end
+
   context "Update project" do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
     before(:each) do
