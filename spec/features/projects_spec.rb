@@ -4,14 +4,16 @@ RSpec.feature "Projects", type: :feature do
   context "Create new project" do
     before (:each) do
       visit new_project_path
-      within("projfields") do
+      within("form") do
         fill_in "Title", with: "Test title"
         # fill_in "Brief", with: "A short description"
       end
     end
   
     scenario "should be successful" do
-      fill_in "Description", with: "Test description"
+      within("form") do
+        fill_in "Description", with: "Test description"
+      end
       click_button "Create Project"
       expect(page).to have_content("Project was successfully created")
     end
@@ -29,7 +31,7 @@ RSpec.feature "Projects", type: :feature do
     end
 
     scenario "should be successful" do
-      within("projfields") do
+      within("form") do
         fill_in "Description", with: "New description content"
       end
       click_button "Update Project"
@@ -37,7 +39,7 @@ RSpec.feature "Projects", type: :feature do
     end
 
     scenario "should fail" do
-      within("projfields") do
+      within("form") do
         fill_in "Description", with: ""
       end
       click_button "Update Project"
