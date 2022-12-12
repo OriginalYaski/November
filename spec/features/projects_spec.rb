@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
+=begin
   context "Create new project" do
     before (:each) do
       visit new_project_path
@@ -23,7 +24,7 @@ RSpec.feature "Projects", type: :feature do
       expect(page).to have_content("Description can't be blank")
     end
   end
-
+=end
   context "Update project" do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
     before(:each) do
