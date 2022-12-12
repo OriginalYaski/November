@@ -72,8 +72,12 @@ body p {
     <div class="dropdown">
     <button>Account</button>
     <div class="dropdown-content">
-        <a href="/dummyval">Sign In</a>
-        <a href="/notyetimplimented">Sign Up</a>
+        <% if user_signed_in? %>
+        <a href="/projects/portfolio">My Portfolio</a>
+        <a href="/notyetimplimented">Sign Out</a>
+      <%else%>
+        <a href="/users/sign_in">Sign In</a>
+      <%end%>
     </div>
     </div>
 </nav>
