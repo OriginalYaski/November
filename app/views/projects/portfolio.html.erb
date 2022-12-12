@@ -74,7 +74,7 @@ body p {
     <div class="dropdown-content">
         <% if user_signed_in? %>
         <a href="/projects/portfolio">My Portfolio</a>
-        <a href="/notyetimplimented">Sign Out</a>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
       <%else%>
         <a href="/users/sign_in">Sign In</a>
       <%end%>
